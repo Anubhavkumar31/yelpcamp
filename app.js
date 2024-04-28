@@ -22,8 +22,8 @@ const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 const MongoDBStore = require('connect-mongo')(session);
 const { isLoggenIn } = require('./middleware');
-//const dbUrl = process.env.DB_URL;
-const dbUrl = 'mongodb://localhost:27017/yelpcamp'
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp'
+//const dbUrl = 'mongodb://localhost:27017/yelpcamp'
 mongoose.connect(dbUrl)
     .then(() => {
         console.log("MONGO CONNECTION OPEN!!!")
